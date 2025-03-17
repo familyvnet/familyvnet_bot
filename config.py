@@ -6,6 +6,15 @@ load_dotenv(find_dotenv())
 TG_TOKEN = os.getenv('TOKEN')
 PAYMENT_PROVIDER_TOKEN = os.getenv('token_pay')
 
+WEBHOOK_HOST = "https://1sshight.ru"  # Домен вашего сервера
+WEBHOOK_PATH = "/webhook"  # Путь вебхука
+WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"  # Полный URL вебхука
+
+# Настройки сервера
+SERVER_HOST = "0.0.0.0"  # Открываем для внешних запросов
+SERVER_PORT = 8443  # Порт для работы веб-сервера (лучше 8443 для HTTPS)
+
+
 # Список команд для Telegram бота
 cmds_list: list[BotCommand] = [
     BotCommand(command='start', description='Главное меню'),
